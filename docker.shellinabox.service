@@ -9,7 +9,7 @@ Restart=always
 ExecStartPre=-/usr/bin/docker stop %n
 ExecStartPre=-/usr/bin/docker rm %n
 ExecStartPre=-/usr/bin/docker pull atomney/shellinabox
-ExecStart=/usr/bin/docker run --rm --name %n -p 443:4200 atomney/shellinabox
+ExecStart=/usr/bin/docker run --rm --name %n -p 443:4200 -m 16m atomney/shellinabox
 ExecStop=/usr/bin/docker stop %n
 
 [Install]
